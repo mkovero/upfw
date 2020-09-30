@@ -35,13 +35,16 @@ public:
 
     void operator=(Connector const &) = delete;
 
+    std::string basicGet(const std::string &);
+    void basicPost(const std::string &, const std::string& );
+    void basicDelete(const std::string &);
 
     void sendHeadersForGet();
     void sendHeadersForPost();
 
     std::string fetchFw(const std::string &);
-    void updateFw(std::string &, std::string);
-    void deleteFwRule(std::string &, std::string);
+    void updateFw(const std::string &, const std::string);
+    void deleteFwRule(const std::string &, const std::string &);
 
     std::string fetchServerList();
     std::string fetchIPAddr();
