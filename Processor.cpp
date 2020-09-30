@@ -4,7 +4,7 @@
 #include <regex>
 #include "Processor.h"
 
-std::string Processor::generateFWJSON(std::vector<Server>::iterator _srv, const std::string &_index) {
+std::string Processor::generateFwJson(std::vector<Server>::iterator _srv, const std::string &_index) {
     jsonEntry["firewall_rule"] = {
             {"position",                  _index},
             {"direction",                 "in"},
@@ -30,11 +30,11 @@ void Processor::inspect(const std::string &_server) {
         if (!previousExists) {
             std::cout << _server << " got previous did not exist, index is " << index << std::endl;
 
-            connector->updateFw(srv->uuid, generateFWJSON(srv, index));
+            connector->updateFw(srv->uuid, generateFwJson(srv, index));
         } else if (previousExists && index != "0") {
             std::cout << _server << " got previous exists, index is " << index << std::endl;
             connector->deleteFwRule(srv->uuid, index);
-            connector->updateFw(srv->uuid, generateFWJSON(srv, index));
+            connector->updateFw(srv->uuid, generateFwJson(srv, index));
         }
     } else {
         std::cout << _server << " not found." << std::endl;

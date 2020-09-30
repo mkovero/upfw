@@ -40,8 +40,8 @@ public:
     void sendHeadersForPost();
 
     std::string fetchFw(const std::string &);
-    void updateFw(std::string &, std::string );
-    void deleteFwRule(std::string &_uuid, std::string _position);
+    void updateFw(std::string &, std::string);
+    void deleteFwRule(std::string &, std::string);
 
     std::string fetchServerList();
     std::string fetchIPAddr();

@@ -37,7 +37,7 @@ private:
     std::vector<Server>::iterator findServer(const std::string &);
     retVals checkIfPreviousEntryExists(const std::string &);
     std::string getSrcIP();
-    std::string generateFWJSON(std::vector<Server>::iterator, const std::string &);
+    std::string generateFwJson(std::vector<Server>::iterator, const std::string &);
 
     json jsonEntry;
     static Server serverJsonToStruct(const json &, const json &);
